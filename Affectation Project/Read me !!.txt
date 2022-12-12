@@ -1,3 +1,5 @@
--For Spring boot backend I used JDK 17 consider changing build path if you want to run in your differend JDk
+-If you are Using This application For first time please consider changing property file in order to allow msql to create tables and after creation of table make it back to original :    
+spring.jpa.hibernate.ddl-auto = update   to spring.jpa.hibernate.ddl-auto = create
+-For Spring boot backend I used JDK 17 consider changing build path if you want to run in your differend JDk(Maven version 3)
 - For angular frontend You have to create new angular project and then change original src with this one 
 you need only to install bootstrap(npm i bootstrap)
