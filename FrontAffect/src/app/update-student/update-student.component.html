@@ -1,0 +1,19 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Project </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Students' Name</label>
+            <input type="text" class ="form-control" id = "nom"
+                [(ngModel)] = "Student.nom" name = "nom">
+        </div>
+
+        <div class="form-group">
+            <label> Student' Average</label>
+            <input type="text" class ="form-control" id = "moyen"
+                [(ngModel)] = "Student.moyen" name = "moyen">
+        </div>
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div>

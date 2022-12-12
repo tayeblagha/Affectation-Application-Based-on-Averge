@@ -1,0 +1,46 @@
+<h2>Student List &nbsp;
+    <a routerLink="create-student" routerLinkActive="active"  ><i class="fa-duotone fa-plus"></i>
+    </a> 
+</h2> 
+<form (ngSubmit) = "updateNumPrSt()">
+    
+    <div class="form-group">
+        <label> Each Student Have the right of Choosing  <strong>{{numStPr}}</strong> Projects.  you can change the value: &nbsp;</label>
+        <input type="number" id = "num" [(ngModel)] = "NumprstClass.num" name = "num" > &nbsp;
+           
+        <button class = "btn btn-primary" type ="submit"  >Change Number </button>
+    </div>
+</form>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id Student</th>
+            <th>Name Student</th>
+            <th>Average Student</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.nom}}</td>
+            <td>{{student.moyen}}</td>
+
+            <td>
+                <button (click) = "updateStudent(student.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteStudent(student.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+            <td><a routerLink="student_project/{{student.id}}" routerLinkActive="active"  target="_blank" ><i class="fas fa-folder-open"></i> </a></td>
+         
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center">
+    <button *ngIf="verifyStudentAndProject()" (click)="affectStudents()" class="btn btn-success" type="button">Get Affectation <i class="fa-sharp fa-solid fa-display-code"></i></button>
+  </div>
+  <div class="text-center" *ngIf="!verifyStudentAndProject()">
+<h6 > Affectation List won't be showed unless number of students will be equal to number of projects !!</h6>  
+</div>
+
+

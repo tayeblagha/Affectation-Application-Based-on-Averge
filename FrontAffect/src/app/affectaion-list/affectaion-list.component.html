@@ -1,0 +1,17 @@
+<h2>Affectation List </h2>  
+
+<table class="table table-stripped">
+   <thead>
+       <tr>
+           <th>Student name</th>
+           <th>Project name</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor = "let affect of affectations">
+          
+           <td>{{affect.studentName}}</td>
+           <td>{{affect.projectName}}</td>
+       </tr>
+   </tbody>
+</table>

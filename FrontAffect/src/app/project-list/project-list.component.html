@@ -1,0 +1,23 @@
+<h2>Project List &nbsp;
+     <a routerLink="create-project" routerLinkActive="active"  ><i class="fa-duotone fa-plus"></i>
+     </a> 
+</h2>  
+ 
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id project</th>
+            <th>Name project</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let project of projects">
+            <td>{{project.id}}</td>
+            <td>{{project.name}}</td>
+            <td>
+                <button (click) = "updateProject(project.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteProject(project.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,3 @@
+-For Spring boot backend I used JDK 17 consider changing build path if you want to run in your differend JDk
+- For angular frontend You have to create new angular project and then change original src with this one 
+you need only to install bootstrap(npm i bootstrap)

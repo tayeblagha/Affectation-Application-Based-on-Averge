@@ -1,0 +1,42 @@
+
+
+<h2>{{student.nom }}'s Projects <i class="fa-solid fa-user-graduate"></i> &nbsp; <!-- nbsp=space -->
+    <a routerLink="create-project" routerLinkActive="active"  ><i class="fa-duotone fa-plus"></i>
+    </a> 
+</h2>  
+
+<table class="table table-stripped">
+   <thead>
+       <tr>
+           <th>Id project</th>
+           <th>Name project</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor = "let project of projects">
+           <td>{{project.id}}</td>
+           <td>{{project.name}}</td>
+           
+           <td>
+            <button (click) = "deleteProject(project.id)" class = "btn btn-danger" style="margin-left: 10px"> <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+           </td>
+
+       </tr>
+   </tbody>
+</table>
+
+
+<div class="text-center">
+<form  (ngSubmit)="addProject()" [formGroup]="oppoSuitsForm">
+    
+      <select formControlName="name">
+        <option [ngValue]="null" disabled>Select Project </option>
+        <option *ngFor="let proj of projectsAvailable"  [ngValue]="proj.id"  
+         >{{proj.name}}</option>
+      </select>
+     
+      <button type="submit">Submit</button>
+     
+    </form>
+</div>
